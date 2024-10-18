@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using TallerClase.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<TallerClaseContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("TallerClaseContext") ?? throw new InvalidOperationException("Connection string 'TallerClaseContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
