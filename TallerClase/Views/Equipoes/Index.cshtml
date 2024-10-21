@@ -41,10 +41,9 @@
                 <td>@Html.DisplayFor(modelItem => item.Ciudad)</td>
                 <td>@Html.DisplayFor(modelItem => item.Titulos)</td>
                 <td>@Html.DisplayFor(modelItem => item.AceptaExtranjeros)</td>
-                <td>@Html.DisplayFor(modelItem => item.Estadio.Id)</td>
+                <td>@Html.DisplayFor(modelItem => item.Estadio.Nombre)</td>
                 <td>
-                    <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
-                    <a class="btn btn-sm btn-info" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
                     <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
                 </td>
             </tr>
