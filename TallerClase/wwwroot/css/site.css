@@ -20,3 +20,21 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.bg-nav {
+    background-color: #181316;
+}
+
+.toggle-color {
+  color: white;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+.logo {
+  max-height: 40px;
+}
