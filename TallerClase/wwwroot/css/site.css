@@ -27,6 +27,10 @@ body {
     background-color: #181316;
 }
 
+.nav-pad {
+  padding-left: 25px;
+}
+
 .toggle-color {
   color: white;
 }
@@ -49,12 +53,25 @@ img {
 .footer-ligapro {
   display: grid;
   align-items: center;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  height: 100px;
+  grid-template-columns: repeat(3, 1fr);
+  height: 200px;
 }
 
+@media (min-width: 768px) {
+  .footer-ligapro {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(5, 1fr);
+    height: 100px;
+  }
+}
 
 .footer-imgs img {
   max-height: 40px;
   max-width: 150px;
+}
+
+/* s */
+.mar-button {
+  margin-bottom: 50px;
 }

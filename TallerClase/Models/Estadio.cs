@@ -7,6 +7,9 @@ namespace TallerClase.Models
         [Key]
         public int Id { get; set; }
 
+        [MaxLength(100)]
+        public string Nombre { get; set; }
+
         [MaxLength(150)]
         public string Direccion { get; set; }
 
