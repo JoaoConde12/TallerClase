@@ -21,6 +21,8 @@ body {
   margin-bottom: 60px;
 }
 
+/* Navbar */
+
 .bg-nav {
     background-color: #181316;
 }
@@ -37,4 +39,22 @@ img {
 
 .logo {
   max-height: 40px;
+}
+
+/* Footer */
+.bg-footer {
+  background-color: #290a8f;
+}
+
+.footer-ligapro {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  height: 100px;
+}
+
+
+.footer-imgs img {
+  max-height: 40px;
+  max-width: 150px;
 }
