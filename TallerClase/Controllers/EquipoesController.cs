@@ -65,7 +65,7 @@ namespace TallerClase.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdEstadio"] = new SelectList(_context.Estadio, "Id", "Id", equipo.IdEstadio);
+            ViewData["IdEstadio"] = new SelectList(_context.Estadio, "Id", "Id", equipo.Nombre);
             return View(equipo);
         }
 
