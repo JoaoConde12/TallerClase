@@ -1,0 +1,54 @@
+﻿@model TallerClase.Models.Futbolista
+
+@{
+    ViewData["Title"] = "Eliminar Futbolista";
+}
+
+<h1>Eliminar Futbolista</h1>
+
+<h3 class="mb-4">¿Estás seguro de que deseas eliminar este futbolista?</h3>
+
+<hr />
+
+<div class="mb-3">
+    <h4>Detalles del futbolista</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Posicion)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Posicion)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Edad)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Edad)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.IdEquipo)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.IdEquipo)
+        </dd>
+    </dl>
+</div>
+
+<form asp-action="Delete" class="mb-3">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <input type="submit" value="Eliminar" class="btn btn-danger" />
+        <a class="btn btn-primary ms-2" asp-action="Index">Volver a la lista</a>
+    </div>
+</form>

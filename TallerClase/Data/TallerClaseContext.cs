@@ -15,7 +15,7 @@ namespace TallerClase.Data
         }
 
         public DbSet<TallerClase.Models.Equipo> Equipo { get; set; } = default!;
-        public DbSet<TallerClase.Models.Jugador> Jugador { get; set; } = default!;
         public DbSet<TallerClase.Models.Estadio> Estadio { get; set; } = default!;
+        public DbSet<TallerClase.Models.Futbolista> Futbolista { get; set; } = default!;
     }
 }
