@@ -48,13 +48,11 @@ namespace TallerClase.Controllers
         // GET: Equipoes/Create
         public IActionResult Create()
         {
-            ViewData["IdEstadio"] = new SelectList(_context.Estadio, "Id", "Id");
+            ViewData["IdEstadio"] = new SelectList(_context.Estadio, "Id", "Nombre");
             return View();
         }
 
         // POST: Equipoes/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Nombre,Ciudad,Titulos,AceptaExtranjeros,IdEstadio")] Equipo equipo)
@@ -65,7 +63,7 @@ namespace TallerClase.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdEstadio"] = new SelectList(_context.Estadio, "Id", "Id", equipo.Nombre);
+            ViewData["IdEstadio"] = new SelectList(_context.Estadio, "Id", "Nombre", equipo.IdEstadio);
             return View(equipo);
         }
 
@@ -82,13 +80,11 @@ namespace TallerClase.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdEstadio"] = new SelectList(_context.Estadio, "Id", "Id", equipo.IdEstadio);
+            ViewData["IdEstadio"] = new SelectList(_context.Estadio, "Id", "Nombre", equipo.IdEstadio);
             return View(equipo);
         }
 
         // POST: Equipoes/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Nombre,Ciudad,Titulos,AceptaExtranjeros,IdEstadio")] Equipo equipo)
@@ -118,7 +114,7 @@ namespace TallerClase.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdEstadio"] = new SelectList(_context.Estadio, "Id", "Id", equipo.IdEstadio);
+            ViewData["IdEstadio"] = new SelectList(_context.Estadio, "Id", "Nombre", equipo.IdEstadio);
             return View(equipo);
         }
 
