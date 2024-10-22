@@ -23,6 +23,7 @@ namespace TallerClase.Controllers
         public async Task<IActionResult> Index()
         {
             var tallerClaseContext = _context.Futbolista.Include(f => f.Equipo);
+            ViewBag.Equipos = await _context.Equipo.ToListAsync(); 
             return View(await tallerClaseContext.ToListAsync());
         }
 

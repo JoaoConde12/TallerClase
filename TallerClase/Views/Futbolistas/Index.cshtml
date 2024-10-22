@@ -10,7 +10,18 @@
     <a class="btn btn-primary mb-2 mt-1" asp-action="Create">Añadir un nuevo futbolista</a>
 </p>
 
-<table class="table table-striped table-hover mb-5">
+<div class="mb-3">
+    <label for="filtrarPorEquipo" class="mb-2">Filtrar por equipo:</label>
+    <select id="filtrarPorEquipo" class="form-control">
+        <option value="">Todos los Equipos</option>
+        @foreach (var equipo in ViewBag.Equipos)
+        {
+            <option value="@equipo.Id">@equipo.Nombre</option>
+        }
+    </select>
+</div>
+
+<table class="table table-striped table-hover mb-5" id="tablaFutbolistas">
     <thead class="thead-dark">
         <tr>
             <th scope="col">
@@ -31,11 +42,11 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
+            <tr equipo-id="@item.IdEquipo">
                 <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
                 <td>@Html.DisplayFor(modelItem => item.Posicion)</td>
                 <td>@Html.DisplayFor(modelItem => item.Edad)</td>
-                <td>@Html.DisplayFor(modelItem => item.Equipo.Nombre)</td> <!-- Asegúrate de que estás accediendo al nombre del equipo -->
+                <td>@Html.DisplayFor(modelItem => item.Equipo.Nombre)</td>
                 <td>
                     <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
                     <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
@@ -44,3 +55,21 @@
         }
     </tbody>
 </table>
+
+@section Scripts {
+    <script>
+        document.getElementById('filtrarPorEquipo').addEventListener('change', (event) => {
+            const selectedEquipoId = event.target.value;
+            const rows = document.querySelectorAll('#tablaFutbolistas tbody tr');
+
+            rows.forEach(row => {
+                const equipoId = row.getAttribute('equipo-id'); 
+                if (selectedEquipoId === "" || equipoId === selectedEquipoId) {
+                    row.style.display = ""; 
+                } else {
+                    row.style.display = "none";
+                }
+            });
+        });
+    </script>
+}
