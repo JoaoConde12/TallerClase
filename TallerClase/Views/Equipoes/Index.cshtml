@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<TallerClase.Models.Equipo>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Equipos";
 }
 
 <h1>Lista de Equipos</h1>
@@ -23,7 +23,7 @@
                 @Html.DisplayNameFor(model => model.Titulos)
             </th>
             <th scope="col">
-                @Html.DisplayNameFor(model => model.AceptaExtranjeros)
+                Acepta Extranjeros
             </th>
             <th scope="col">
                 @Html.DisplayNameFor(model => model.Estadio)
@@ -38,7 +38,7 @@
                 <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
                 <td>@Html.DisplayFor(modelItem => item.Ciudad)</td>
                 <td>@Html.DisplayFor(modelItem => item.Titulos)</td>
-                <td>@Html.DisplayFor(modelItem => item.AceptaExtranjeros)</td>
+                <td>@(item.AceptaExtranjeros ? "Sí" : "No")</td>
                 <td>@Html.DisplayFor(modelItem => item.Estadio.Nombre)</td>
                 <td>
                     <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@item.Id">Editar</a>

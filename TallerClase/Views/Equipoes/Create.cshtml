@@ -1,7 +1,7 @@
 ﻿@model TallerClase.Models.Equipo
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Crear equipo";
 }
 
 <h1>Añadir nuevo equipo</h1>
@@ -38,21 +38,20 @@
             <br>
 
             <div class="form-group form-check">
-                <label class="form-check-label">
+                <label class="form-check-label">¿Acepta Extranjeros?
                     <input class="form-check-input" asp-for="AceptaExtranjeros" /> 
-                    @Html.DisplayNameFor(model => model.AceptaExtranjeros)
                 </label>
             </div>
             <br>
 
             <div class="form-group">
-                <label asp-for="IdEstadio" class="control-label"></label>
+                <label asp-for="IdEstadio" class="control-label">Estadio</label>
                 <select asp-for="IdEstadio" class="form-control" asp-items="ViewBag.IdEstadio"></select>
             </div>
             <br>
 
             <div class="form-group mar-button">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Crear" class="btn btn-primary" />
             </div>
         </form>
     </div>

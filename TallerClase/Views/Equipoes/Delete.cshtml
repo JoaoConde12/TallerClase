@@ -1,7 +1,7 @@
 ﻿@model TallerClase.Models.Equipo
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Eliminar equipo";
 }
 
 <h1>Eliminar equipo</h1>
@@ -34,14 +34,14 @@
         </dd>
 
         <dt class="col-sm-3">
-            @Html.DisplayNameFor(model => model.AceptaExtranjeros)
+            ¿Acepta Extranjeros?
         </dt>
         <dd class="col-sm-9">
             @Html.DisplayFor(model => model.AceptaExtranjeros)
         </dd>
 
         <dt class="col-sm-3">
-            @Html.DisplayNameFor(model => model.Estadio.Nombre)
+            Estadio
         </dt>
         <dd class="col-sm-9">
             @Html.DisplayFor(model => model.Estadio.Nombre)
