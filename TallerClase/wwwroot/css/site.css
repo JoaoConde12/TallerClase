@@ -19,6 +19,8 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-color: #f4f4f4;
+  color: #333;
 }
 
 /* Navbar */
@@ -43,6 +45,62 @@ img {
 
 .logo {
   max-height: 40px;
+}
+
+/* Main - Home */
+.text-main {
+  animation: mover-izquierda-derecha 2s 1;
+  animation-fill-mode: forwards;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  } 
+
+  .equipos {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    column-gap: 10px;
+    row-gap: 40px;
+    justify-content: center;
+  }
+
+  .equipo {
+    width: calc((100% / 6) - 10px);
+  }
+
+  /* Esta regla se aplica solo a la última fila */
+  .equipos {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+  }
+
+  .equipo:nth-last-child(-n+4) {
+    flex: 0 0 calc((100% / 6) - 10px); 
+    margin: 0;
+  }
+
+  .equipo img {
+    max-width: 100%;
+    object-fit: cover;
+    height: 80px;
+    margin: 0 auto;
+  }
+
+  .trofeo {
+    margin: 0 auto;
+  }
+
+  .trofeo img {
+    max-width: 100%;
+    object-fit: cover;
+    height: 400px;
+  }
 }
 
 /* Footer */
@@ -74,4 +132,14 @@ img {
 /* s */
 .mar-button {
   margin-bottom: 50px;
+}
+
+/* Animaciones */
+@keyframes mover-izquierda-derecha {
+  from {
+    transform: translateX(-1000px);
+  }
+  to {
+    transform: translateX(0px);
+  }
 }
